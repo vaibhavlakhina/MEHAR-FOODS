@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehar Foods — Deliciousness, Delivered!</title>
+  <meta name="description" content="Mehar Foods — Premium cloud kitchen in Panipat. Order fresh burgers, sandwiches, noodles, chaat & more. Open 11 AM to 2 AM. Order directly on WhatsApp!" />
+  <meta name="keywords" content="Mehar Foods, cloud kitchen Panipat, burgers Panipat, food delivery Panipat, WhatsApp food order" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== TICKER BANNER ===== -->
+  <div id="top-ticker">
+    <div class="ticker-inner">
+      <span>🎉 Order above ₹250 — Get FREE Cold Drink worth ₹20!</span>
+      <span>🧀 Extra Cheese available +₹10 on Burgers, Sandwiches & Noodles</span>
+      <span>⏰ Open Daily: 11:00 AM – 2:00 AM</span>
+      <span>📍 1636 NHBC Colony, Sai Baba Chowk, Panipat</span>
+      <span>🎉 Order above ₹250 — Get FREE Cold Drink worth ₹20!</span>
+      <span>🧀 Extra Cheese available +₹10 on Burgers, Sandwiches & Noodles</span>
+      <span>⏰ Open Daily: 11:00 AM – 2:00 AM</span>
+      <span>📍 1636 NHBC Colony, Sai Baba Chowk, Panipat</span>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <img src="images/logo.png" alt="Mehar Foods Logo" class="nav-logo-img" />
+        <div class="logo-text-wrap">
+          <span class="logo-brand">MEHAR FOODS</span>
+          <span class="logo-tag">Deliciousness, Delivered!</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#best-sellers" class="nav-link">Best Sellers</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="timing-chip">⏰ 11AM–2AM</div>
+        <button class="cart-btn" id="cart-btn" aria-label="Open cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="mobile-nav-logo">
+        <img src="images/logo.png" alt="Mehar Foods" class="mobile-nav-logo-img" />
+        <div>
+          <div class="mobile-nav-brand">MEHAR FOODS</div>
+          <div class="mobile-nav-tag">Deliciousness, Delivered!</div>
+        </div>
+      </div>
+      <a href="#menu" class="mobile-nav-link" onclick="closeMobileNav()">🍽️ Menu</a>
+      <a href="#best-sellers" class="mobile-nav-link" onclick="closeMobileNav()">⭐ Best Sellers</a>
+      <a href="#about" class="mobile-nav-link" onclick="closeMobileNav()">ℹ️ About</a>
+      <a href="#contact" class="mobile-nav-link" onclick="closeMobileNav()">📍 Contact</a>
+      <a href="https://wa.me/919729871230" class="mobile-nav-link wa-link" target="_blank">💬 WhatsApp Order</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content" data-animate="fadeInLeft">
+        <div class="hero-logo-wrap">
+          <img src="images/logo.png" alt="Mehar Foods" class="hero-logo-img" />
+        </div>
+        <div class="hero-pill">🔥 Panipat's Favourite Cloud Kitchen</div>
+        <h1 class="hero-title">
+          MEHAR<br>
+          <span class="hero-title-green">FOODS</span>
+        </h1>
+        <p class="hero-tagline">Deliciousness, Delivered!</p>
+        <p class="hero-desc">
+          Fresh, flavourful & affordable — your go-to cloud kitchen in Panipat. 
+          Burgers, Sandwiches, Noodles, Chaat & more. Served till 2 AM!
+        </p>
+        <div class="hero-ctas">
+          <a href="#menu" class="btn btn-orange" id="hero-order-btn">🍔 Browse Menu</a>
+          <a href="https://wa.me/919729871230" target="_blank" class="btn btn-wa" id="hero-wa-btn">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="stat-val">500+</span><span class="stat-lbl">Happy Customers</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><span class="stat-val">15+</span><span class="stat-lbl">Menu Items</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><span class="stat-val">15hrs</span><span class="stat-lbl">Daily Open</span></div>
+        </div>
+      </div>
+
+      <div class="hero-img-col" data-animate="fadeInRight">
+        <div class="hero-img-ring">
+          <img src="images/hero.png" alt="Mehar Foods premium food spread" id="hero-food-img" />
+          <div class="hero-float-badge badge-top-right">
+            <span class="badge-emoji">⭐</span>
+            <span>Premium Quality</span>
+          </div>
+          <div class="hero-float-badge badge-bottom-left">
+            <span class="badge-emoji">🔥</span>
+            <span>Always Fresh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-down">
+      <span>Scroll down</span>
+      <div class="scroll-chevron">&#8964;</div>
+    </div>
+  </section>
+
+  <!-- ===== OFFER BANNER ===== -->
+  <section id="offer-banner">
+    <div class="offer-inner">
+      <div class="offer-icon-wrap">🎉</div>
+      <div class="offer-text-wrap">
+        <h2 class="offer-heading">Special Offer!</h2>
+        <p class="offer-desc">Order above <strong>₹250</strong> and get a <strong>FREE Cold Drink</strong> worth ₹20 absolutely free!</p>
+      </div>
+      <a href="#menu" class="btn btn-orange" id="offer-cta-btn">Grab the Deal →</a>
+    </div>
+    <div class="offer-cheese-note">
+      🧀 &nbsp;<strong>Extra Cheese</strong> available on Burgers, Sandwiches & Noodles — just <strong>+₹10</strong>
+    </div>
+  </section>
+
+  <!-- ===== BEST SELLERS ===== -->
+  <section id="best-sellers">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">⭐ Fan Favourites</span>
+        <h2 class="section-title">BEST SELLERS</h2>
+        <p class="section-sub">Our most loved dishes — ordered again and again</p>
+      </div>
+      <div class="bs-grid" id="bs-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section id="menu">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">🍽️ Full Menu</span>
+        <h2 class="section-title">OUR MENU</h2>
+        <p class="section-sub">Fresh, flavourful & made with love — every single day</p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="cat-tabs-wrap">
+        <div class="cat-tabs" id="cat-tabs" role="tablist">
+          <button class="cat-tab active" data-cat="all" role="tab" id="tab-all">All</button>
+          <button class="cat-tab" data-cat="burgers" role="tab" id="tab-burgers">🍔 Burgers</button>
+          <button class="cat-tab" data-cat="sandwiches" role="tab" id="tab-sandwiches">🥪 Sandwiches</button>
+          <button class="cat-tab" data-cat="noodles" role="tab" id="tab-noodles">🍜 Noodles</button>
+          <button class="cat-tab" data-cat="chakna" role="tab" id="tab-chakna">🥗 Chakna</button>
+          <button class="cat-tab" data-cat="raita" role="tab" id="tab-raita">🥣 Raita</button>
+          <button class="cat-tab" data-cat="drinks" role="tab" id="tab-drinks">🥤 Drinks</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menu-grid" role="region" aria-label="Menu items">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-wrap">
+      <div class="about-grid">
+        <div class="about-img-col">
+          <div class="about-img-frame">
+            <img src="images/chilli-noodles.png" alt="Mehar Foods - Best noodles" class="about-img-main" />
+            <img src="images/chana-chaat.png" alt="Mehar Foods - Chaat" class="about-img-secondary" />
+            <div class="about-open-badge">
+              <span class="open-dot"></span>
+              Open Now!
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content-col">
+          <span class="section-eyebrow">🏠 About Us</span>
+          <h2 class="section-title">WHY CHOOSE <span class="text-orange">MEHAR FOODS?</span></h2>
+          <p class="about-desc">
+            We're a passionate cloud kitchen from the heart of Panipat, crafting fresh and 
+            delicious food for every craving. Whether it's a late-night hunger pang or a quick 
+            lunch fix — we've got you covered!
+          </p>
+          <div class="features-grid">
+            <div class="feature-card" id="feat-fresh">
+              <div class="feat-icon">🔥</div>
+              <h4>Always Fresh</h4>
+              <p>Made fresh on every single order, no shortcuts</p>
+            </div>
+            <div class="feature-card" id="feat-late">
+              <div class="feat-icon">⏰</div>
+              <h4>Open Late</h4>
+              <p>Serving you from 11 AM right up to 2 AM</p>
+            </div>
+            <div class="feature-card" id="feat-veg">
+              <div class="feat-icon">🌿</div>
+              <h4>Pure Veg</h4>
+              <p>100% vegetarian — clean & quality ingredients</p>
+            </div>
+            <div class="feature-card" id="feat-price">
+              <div class="feat-icon">💰</div>
+              <h4>Affordable</h4>
+              <p>Premium taste at pocket-friendly prices</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">💬 Customer Love</span>
+        <h2 class="section-title">WHAT PEOPLE SAY</h2>
+        <p class="section-sub">Real reviews from our happy customers</p>
+      </div>
+      <div class="reviews-grid" id="reviews-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">📍 Find Us</span>
+        <h2 class="section-title">CONTACT & LOCATION</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <div class="contact-card" id="contact-address">
+            <span class="contact-icon">📍</span>
+            <div>
+              <h4>Address</h4>
+              <p>1636, NHBC Colony, Sai Baba Chowk, Panipat, Haryana</p>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-timing">
+            <span class="contact-icon">⏰</span>
+            <div>
+              <h4>Timings</h4>
+              <p>11:00 AM – 2:00 AM &nbsp;<span class="open-badge-inline">Open Daily</span></p>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-phone">
+            <span class="contact-icon">📞</span>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <a href="tel:+917355123848" class="contact-phone-link">+91 7355123848</a><br/>
+              <a href="tel:+919729871230" class="contact-phone-link">+91 9729871230</a>
+            </div>
+          </div>
+          <div class="contact-cta-row">
+            <a href="https://wa.me/919729871230" class="btn btn-wa" target="_blank" id="contact-wa-btn">💬 Order on WhatsApp</a>
+            <a href="tel:+919729871230" class="btn btn-outline-green" id="contact-call-btn">📞 Call Now</a>
+          </div>
+        </div>
+        <div class="map-col">
+          <div class="map-frame">
+            <iframe
+              title="Mehar Foods Location"
+              src="https://maps.google.com/maps?q=NHBC+Colony+Sai+Baba+Chowk+Panipat+Haryana&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="images/logo.png" alt="Mehar Foods Logo" class="footer-logo-img" />
+          <div>
+            <div class="footer-logo-text">MEHAR FOODS</div>
+            <p class="footer-tagline">Deliciousness, Delivered!</p>
+          </div>
+        </div>
+        <p class="footer-address">📍 1636, NHBC Colony, Sai Baba Chowk, Panipat</p>
+      </div>
+      <div class="footer-links-col">
+        <h5>Quick Links</h5>
+        <a href="#menu">Menu</a>
+        <a href="#best-sellers">Best Sellers</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-contact-col">
+        <h5>Contact</h5>
+        <a href="tel:+917355123848">+91 7355123848</a>
+        <a href="tel:+919729871230">+91 9729871230</a>
+        <a href="https://wa.me/919729871230" target="_blank" class="footer-wa">💬 WhatsApp Order</a>
+        <p class="footer-hours">⏰ 11 AM – 2 AM Daily</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Mehar Foods. All rights reserved. Made with ❤️ in Panipat.</p>
+    </div>
+  </footer>
+
+  <!-- ===== CART OVERLAY ===== -->
+  <div id="cart-overlay" onclick="closeCart()"></div>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <aside id="cart-sidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3 class="cart-title">🛒 Your Cart</h3>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items-wrap" id="cart-items-wrap">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Free Drink Offer (conditional) -->
+    <div class="free-drink-box" id="free-drink-box">
+      <div class="free-drink-header">🎉 You unlocked a FREE Cold Drink!</div>
+      <select id="free-drink-select" class="free-drink-select">
+        <option value="">— Select Your Free Drink —</option>
+        <option value="Coke">🥤 Coke</option>
+        <option value="Pepsi">🥤 Pepsi</option>
+        <option value="Sprite">🥤 Sprite</option>
+        <option value="Fanta">🥤 Fanta</option>
+        <option value="Thums Up">🥤 Thums Up</option>
+      </select>
+    </div>
+
+    <div class="cart-footer-wrap" id="cart-footer-wrap">
+      <div class="cart-totals">
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-amt">₹0</span>
+        </div>
+        <div class="cart-offer-row" id="cart-offer-row">
+          <span>Free Drink Offer 🎁</span>
+          <span class="text-green">₹0 saved</span>
+        </div>
+      </div>
+
+      <div class="cart-form">
+        <input type="text"     id="cust-name"    placeholder="Your Name *"         class="cart-input" autocomplete="name" />
+        <input type="tel"      id="cust-phone"   placeholder="Phone Number *"       class="cart-input" autocomplete="tel" maxlength="15" inputmode="numeric" />
+        <textarea              id="cust-address" placeholder="Delivery Address *"   class="cart-input cart-textarea" rows="2" autocomplete="street-address"></textarea>
+      </div>
+
+      <button class="btn btn-wa btn-full" id="place-order-btn" onclick="placeOrder()">
+        💬 Place Order on WhatsApp
+      </button>
+      <button class="btn btn-clear" onclick="clearCart()">🗑️ Clear Cart</button>
+    </div>
+  </aside>
+
+  <!-- ===== MOBILE CART BAR ===== -->
+  <div id="mobile-cart-bar" onclick="openCart()" role="button" aria-label="View cart">
+    <div class="mcb-left">
+      <span class="mcb-icon">🛒</span>
+      <span class="mcb-count" id="mcb-count">0 items</span>
+    </div>
+    <div class="mcb-right">
+      <span class="mcb-total" id="mcb-total">₹0</span>
+      <span class="mcb-cta">View Cart ›</span>
+    </div>
+  </div>
+
+  <!-- ===== SIZE MODAL (Noodles) ===== -->
+  <div id="size-overlay" onclick="closeSizeModal()"></div>
+  <div id="size-modal" role="dialog" aria-modal="true" aria-labelledby="size-modal-title">
+    <div class="size-modal-header">
+      <h4 id="size-modal-title">Select Size</h4>
+      <button onclick="closeSizeModal()" class="size-modal-close">✕</button>
+    </div>
+    <p class="size-modal-hint">Choose your portion size</p>
+    <div class="size-options-row">
+      <button class="size-opt-btn" id="size-half-btn">
+        <span class="size-opt-icon">🥣</span>
+        <span class="size-opt-label">Half</span>
+        <span class="size-opt-price" id="size-half-price">₹60</span>
+      </button>
+      <button class="size-opt-btn" id="size-full-btn">
+        <span class="size-opt-icon">🍜</span>
+        <span class="size-opt-label">Full</span>
+        <span class="size-opt-price" id="size-full-price">₹100</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== DRINK OPTIONS MODAL ===== -->
+  <div id="drink-overlay" onclick="closeDrinkModal()"></div>
+  <div id="drink-modal" role="dialog" aria-modal="true" aria-labelledby="drink-modal-title">
+    <div class="size-modal-header">
+      <h4 id="drink-modal-title">Choose Your Drink</h4>
+      <button onclick="closeDrinkModal()" class="size-modal-close">✕</button>
+    </div>
+    <p class="size-modal-hint">Pick your favourite flavour — ₹20 each</p>
+    <div class="drink-options-grid" id="drink-options-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/919729871230" id="wa-float" target="_blank" rel="noopener" aria-label="Order on WhatsApp" title="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-float-text">Order Now</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
