@@ -268,8 +268,10 @@ function renderCartItems() {
       <div class="cart-empty">
         <div class="cart-empty-icon">🛒</div>
         <p>Your cart is empty!</p>
-        <a href="#menu" class="btn btn-orange" onclick="closeCart()" style="margin-top:0.5rem;font-size:0.88rem;padding:0.6rem 1.4rem">Browse Menu</a>
+        <a href="#menu" class="btn btn-orange" id="empty-cart-browse" style="margin-top:0.5rem;font-size:0.88rem;padding:0.6rem 1.4rem">Browse Menu</a>
       </div>`;
+    // Wire Browse Menu click via JS (not onclick attr, since we're in a module)
+    document.getElementById('empty-cart-browse')?.addEventListener('click', () => closeCart());
     return;
   }
 
@@ -279,17 +281,25 @@ function renderCartItems() {
            onerror="this.style.display='none'" />
       <div class="cart-item-info">
         <span class="cart-item-name">${item.name}</span>
-        <span class="cart-item-price">₹${item.price * item.qty}</span>
-        <span class="cart-item-unit">@₹${item.price} each</span>
+        <span class="cart-item-price">&#8377;${item.price * item.qty}</span>
+        <span class="cart-item-unit">@&#8377;${item.price} each</span>
       </div>
       <div class="cart-qty-ctrl">
-        <button class="qty-btn" onclick="updateQty('${item.cartId}', -1)" aria-label="Decrease">−</button>
+        <button class="qty-btn" data-cartid="${item.cartId}" data-delta="-1" aria-label="Decrease">−</button>
         <span class="qty-num">${item.qty}</span>
-        <button class="qty-btn" onclick="updateQty('${item.cartId}', 1)" aria-label="Increase">+</button>
+        <button class="qty-btn" data-cartid="${item.cartId}" data-delta="1" aria-label="Increase">+</button>
       </div>
-      <button class="cart-remove-btn" onclick="removeItem('${item.cartId}')" aria-label="Remove item">✕</button>
+      <button class="cart-remove-btn" data-removeid="${item.cartId}" aria-label="Remove item">✕</button>
     </div>
   `).join('');
+
+  // Wire qty and remove buttons via event delegation (no inline onclick needed)
+  wrap.querySelectorAll('.qty-btn').forEach(btn => {
+    btn.addEventListener('click', () => updateQty(btn.dataset.cartid, Number(btn.dataset.delta)));
+  });
+  wrap.querySelectorAll('.cart-remove-btn').forEach(btn => {
+    btn.addEventListener('click', () => removeItem(btn.dataset.removeid));
+  });
 }
 
 // ============================================
@@ -334,15 +344,19 @@ function openDrinkModal(item) {
   pendingDrinkItem = item;
   document.getElementById('drink-modal-title').textContent = `Choose Your ${item.name}`;
 
-  // Render a button for each flavour option
+  // Render a button for each flavour option — use data attr, wire via addEventListener
   const grid = document.getElementById('drink-options-grid');
   grid.innerHTML = item.options.map(opt => `
-    <button class="drink-opt-btn" onclick="selectDrink('${opt}')">
+    <button class="drink-opt-btn" data-option="${opt}">
       <span class="drink-opt-icon">🥤</span>
       <span class="drink-opt-name">${opt}</span>
       <span class="drink-opt-price">₹${item.price}</span>
     </button>
   `).join('');
+
+  grid.querySelectorAll('.drink-opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => selectDrink(btn.dataset.option));
+  });
 
   document.getElementById('drink-modal').classList.add('open');
   document.getElementById('drink-overlay').classList.add('active');
@@ -672,8 +686,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init cart (empty)
   updateCartUI();
 
+  // Wire overlay + mobile bar clicks via JS (not inline onclick)
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+  document.getElementById('cart-close-btn').addEventListener('click', closeCart);
+  document.getElementById('mobile-cart-bar').addEventListener('click', openCart);
+
+  // Wire cart footer buttons
+  document.getElementById('place-order-btn')?.addEventListener('click', placeOrder);
+  document.querySelector('.btn-clear')?.addEventListener('click', clearCart);
+
+  // Wire size modal close/overlay
+  document.getElementById('size-overlay').addEventListener('click', closeSizeModal);
+  document.querySelector('#size-modal .size-modal-close')?.addEventListener('click', closeSizeModal);
+
+  // Wire drink modal close/overlay
+  document.getElementById('drink-overlay').addEventListener('click', closeDrinkModal);
+  document.querySelector('#drink-modal .size-modal-close')?.addEventListener('click', closeDrinkModal);
+
+  // Wire mobile nav links to close nav
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeMobileNav);
+  });
+
   // Observe any new cards after initial render
   const menuObserver = new MutationObserver(() => initReveal());
   menuObserver.observe(document.getElementById('menu-grid'), { childList: true });
   menuObserver.observe(document.getElementById('bs-grid'),   { childList: true });
 });
+

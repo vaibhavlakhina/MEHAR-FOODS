@@ -67,10 +67,10 @@
           <div class="mobile-nav-tag">Deliciousness, Delivered!</div>
         </div>
       </div>
-      <a href="#menu" class="mobile-nav-link" onclick="closeMobileNav()">🍽️ Menu</a>
-      <a href="#best-sellers" class="mobile-nav-link" onclick="closeMobileNav()">⭐ Best Sellers</a>
-      <a href="#about" class="mobile-nav-link" onclick="closeMobileNav()">ℹ️ About</a>
-      <a href="#contact" class="mobile-nav-link" onclick="closeMobileNav()">📍 Contact</a>
+      <a href="#menu" class="mobile-nav-link">🍽️ Menu</a>
+      <a href="#best-sellers" class="mobile-nav-link">⭐ Best Sellers</a>
+      <a href="#about" class="mobile-nav-link">ℹ️ About</a>
+      <a href="#contact" class="mobile-nav-link">📍 Contact</a>
       <a href="https://wa.me/919729871230" class="mobile-nav-link wa-link" target="_blank">💬 WhatsApp Order</a>
     </div>
   </nav>
@@ -343,7 +343,7 @@
   <aside id="cart-sidebar" aria-label="Shopping cart">
     <div class="cart-header">
       <h3 class="cart-title">🛒 Your Cart</h3>
-      <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">✕</button>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close cart">✕</button>
     </div>
 
     <div class="cart-items-wrap" id="cart-items-wrap">
@@ -381,10 +381,10 @@
         <textarea              id="cust-address" placeholder="Delivery Address *"   class="cart-input cart-textarea" rows="2" autocomplete="street-address"></textarea>
       </div>
 
-      <button class="btn btn-wa btn-full" id="place-order-btn" onclick="placeOrder()">
+      <button class="btn btn-wa btn-full" id="place-order-btn">
         💬 Place Order on WhatsApp
       </button>
-      <button class="btn btn-clear" onclick="clearCart()">🗑️ Clear Cart</button>
+      <button class="btn btn-clear">🗑️ Clear Cart</button>
     </div>
   </aside>
 
@@ -401,11 +401,11 @@
   </div>
 
   <!-- ===== SIZE MODAL (Noodles) ===== -->
-  <div id="size-overlay" onclick="closeSizeModal()"></div>
+  <div id="size-overlay"></div>
   <div id="size-modal" role="dialog" aria-modal="true" aria-labelledby="size-modal-title">
     <div class="size-modal-header">
       <h4 id="size-modal-title">Select Size</h4>
-      <button onclick="closeSizeModal()" class="size-modal-close">✕</button>
+      <button class="size-modal-close" aria-label="Close">✕</button>
     </div>
     <p class="size-modal-hint">Choose your portion size</p>
     <div class="size-options-row">
@@ -423,11 +423,11 @@
   </div>
 
   <!-- ===== DRINK OPTIONS MODAL ===== -->
-  <div id="drink-overlay" onclick="closeDrinkModal()"></div>
+  <div id="drink-overlay"></div>
   <div id="drink-modal" role="dialog" aria-modal="true" aria-labelledby="drink-modal-title">
     <div class="size-modal-header">
       <h4 id="drink-modal-title">Choose Your Drink</h4>
-      <button onclick="closeDrinkModal()" class="size-modal-close">✕</button>
+      <button class="size-modal-close" aria-label="Close">✕</button>
     </div>
     <p class="size-modal-hint">Pick your favourite flavour — ₹20 each</p>
     <div class="drink-options-grid" id="drink-options-grid">
