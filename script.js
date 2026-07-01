@@ -247,12 +247,15 @@ function updateCartUI() {
   // Sidebar
   document.getElementById('cart-subtotal-amt').textContent = `₹${total}`;
 
-  // Free drink box
+  // 10% Discount box
   const freeDrinkBox = document.getElementById('free-drink-box');
   const offerRow     = document.getElementById('cart-offer-row');
-  if (total >= 250) {
+  const discountAmt  = document.getElementById('cart-discount-amt');
+  if (total >= 300) {
+    const discount = Math.round(total * 0.10);
     freeDrinkBox.style.display = 'block';
     offerRow.style.display     = 'flex';
+    if (discountAmt) discountAmt.textContent = `-₹${discount}`;
   } else {
     freeDrinkBox.style.display = 'none';
     offerRow.style.display     = 'none';
@@ -417,7 +420,6 @@ function placeOrder() {
   }
 
   const total     = getTotal();
-  const freeDrink = document.getElementById('free-drink-select')?.value || '';
 
   // Build WhatsApp message
   let msg = `Hi Mehar Foods! 👋\n\n`;
@@ -430,11 +432,13 @@ function placeOrder() {
     msg += `• ${item.qty}x ${item.name} — ₹${item.price * item.qty}\n`;
   });
 
-  if (freeDrink && total >= 250) {
-    msg += `• 1x FREE ${freeDrink} (offer applied) — ₹0\n`;
+  if (total >= 300) {
+    const discount = Math.round(total * 0.10);
+    msg += `• 10% Discount Applied — -₹${discount}\n`;
+    msg += `\n💰 *Total after discount: ₹${total - discount}*`;
+  } else {
+    msg += `\n💰 *Total: ₹${total}*`;
   }
-
-  msg += `\n💰 *Total: ₹${total}*`;
   msg += `\n\n_Placed via Mehar Foods website_`;
 
   const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;

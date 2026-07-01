@@ -17,11 +17,11 @@
   <!-- ===== TICKER BANNER ===== -->
   <div id="top-ticker">
     <div class="ticker-inner">
-      <span>🎉 Order above ₹250 — Get FREE Cold Drink worth ₹20!</span>
+      <span>🎉 Order above ₹300 — Get 10% OFF on your order!</span>
       <span>🧀 Extra Cheese available +₹10 on Burgers, Sandwiches & Noodles</span>
       <span>⏰ Open Daily: 11:00 AM – 2:00 AM</span>
       <span>📍 1636 NHBC Colony, Sai Baba Chowk, Panipat</span>
-      <span>🎉 Order above ₹250 — Get FREE Cold Drink worth ₹20!</span>
+      <span>🎉 Order above ₹300 — Get 10% OFF on your order!</span>
       <span>🧀 Extra Cheese available +₹10 on Burgers, Sandwiches & Noodles</span>
       <span>⏰ Open Daily: 11:00 AM – 2:00 AM</span>
       <span>📍 1636 NHBC Colony, Sai Baba Chowk, Panipat</span>
@@ -133,7 +133,7 @@
       <div class="offer-icon-wrap">🎉</div>
       <div class="offer-text-wrap">
         <h2 class="offer-heading">Special Offer!</h2>
-        <p class="offer-desc">Order above <strong>₹250</strong> and get a <strong>FREE Cold Drink</strong> worth ₹20 absolutely free!</p>
+        <p class="offer-desc">Order above <strong>₹300</strong> and get <strong>10% OFF</strong> on your entire order!</p>
       </div>
       <a href="#menu" class="btn btn-orange" id="offer-cta-btn">Grab the Deal →</a>
     </div>
@@ -350,17 +350,9 @@
       <!-- Rendered by JS -->
     </div>
 
-    <!-- Free Drink Offer (conditional) -->
+    <!-- 10% Discount Offer (conditional) -->
     <div class="free-drink-box" id="free-drink-box">
-      <div class="free-drink-header">🎉 You unlocked a FREE Cold Drink!</div>
-      <select id="free-drink-select" class="free-drink-select">
-        <option value="">— Select Your Free Drink —</option>
-        <option value="Coke">🥤 Coke</option>
-        <option value="Pepsi">🥤 Pepsi</option>
-        <option value="Sprite">🥤 Sprite</option>
-        <option value="Fanta">🥤 Fanta</option>
-        <option value="Thums Up">🥤 Thums Up</option>
-      </select>
+      <div class="free-drink-header">🎉 You unlocked 10% OFF on your order!</div>
     </div>
 
     <div class="cart-footer-wrap" id="cart-footer-wrap">
@@ -370,8 +362,8 @@
           <span id="cart-subtotal-amt">₹0</span>
         </div>
         <div class="cart-offer-row" id="cart-offer-row">
-          <span>Free Drink Offer 🎁</span>
-          <span class="text-green">₹0 saved</span>
+          <span>10% Discount 🎁</span>
+          <span class="text-green" id="cart-discount-amt">-₹0</span>
         </div>
       </div>
 
